@@ -1,4 +1,4 @@
-![Short demo](src/assets/bouncingballs.gif)
+![Short demo](src/assets/bouncingballsgif.gif)
 
 # Getting Started with Create React App
 
