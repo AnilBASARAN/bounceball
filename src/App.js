@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBasketball } from '@fortawesome/free-solid-svg-icons';
+import clsx from "clsx";
 import './App.css';
+import {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+const App = () => {
+
+  const [check,setCheck] = useState(false);
+  
+  return <div className= "flex flex-col items-center justify-center h-screen" >
+
+
+
+    <FontAwesomeIcon icon={faBasketball} className={clsx("fa-solid fa-basketball text-orange-400 text-4xl",check ? "animate-bounce": " ") }/>
+    <div>
+
+      <input
+        className="accent-orange-300"
+        id="basket-checkbox"
+        onChange={(e)=>setCheck(e.target.checked)}
+        type="checkbox"
+        checked ={check}
+         />
+
+      <label
+        className="ml-1"
+        htmlFor="basket-checkbox" >check me to Bounce</label>
+      
     </div>
-  );
-}
+  </div>;
+};
 
 export default App;
